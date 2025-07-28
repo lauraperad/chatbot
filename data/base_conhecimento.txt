@@ -1,0 +1,28 @@
+[Cadastro]
+
+- Qual o prazo do parceiro para realizar o cadastro?
+  O prazo é de 48 horas a partir da data da vinculação, em horário comercial.
+
+- Quem é o supervisor da equipe de cadastro?
+  A supervisora responsável é iara.barrense.
+
+[Protocolo]
+
+- Até que horas funciona a operação de protocolo?
+  A operação de protocolo funciona até as 20h30.
+
+- Que horas funciona o protocolo da LOY?
+  O protocolo da LOY funciona 24 horas por dia, todos os dias.
+
+- Quem é o supervisor de protocolo?
+  O responsável é Pedro Junior. Como a operação funciona por mais de 8 horas diárias, Pedro entra às 12h, e geralmente outro supervisor cobre o horário anterior — esse substituto costuma ser sinalizado no Talk de Pedro.
+
+- Como faço para abrir um protocolo na LOY?
+  Siga o passo a passo no PDF disponível (insira aqui o link do passo a passo da LOY).
+
+- Como faço para abrir um protocolo via diligência?
+  Siga o passo a passo no PDF correspondente (insira aqui o link do passo a passo da diligência).
+
+- Se eu colocar no sistema como "emergencial", ele será feito no mesmo dia?
+  Sim, **desde que o protocolo seja enviado pela LOY** e contenha a informação **"fatal"**, ele será executado no mesmo dia.  
+  Se a abertura for feita diretamente no sistema, é necessário **encaminhar um e-mail emergencial para si.projudi**, com cópia para o seu gestor e também para o gestor da área da SI, Pedro Junior.
