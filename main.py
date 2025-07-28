@@ -1,28 +1,26 @@
-import os
-import gradio as gr
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 from dotenv import load_dotenv
+import os
 from rag_engine import answer_question
 
-# Carrega variáveis de ambiente do .env
 load_dotenv()
+
 API_TOKEN = os.getenv("API_TOKEN", "supertoken123")
 
-def ask_question_api(question, token):
+app = FastAPI()
+
+@app.post("/webhook")
+async def webhook(request: Request):
+    data = await request.json()
+    user_message = data.get("text", "")
+    token = data.get("token", "")
+
     if token != API_TOKEN:
-        return {"answer": None, "error": "❌ Token inválido."}
+        return JSONResponse(content={"text": "❌ Token inválido."}, status_code=403)
 
-    if not question.strip():
-        return {"answer": None, "error": "⚠️ Nenhuma pergunta foi fornecida."}
+    if not user_message.strip():
+        return JSONResponse(content={"text": "⚠️ Nenhuma pergunta foi enviada."})
 
-    answer = answer_question(question)
-    return {"answer": answer, "error": None}
-
-with gr.Blocks(title="API de Perguntas com Token") as demo:
-    gr.Markdown("### 🤖 API RAG com Token de Autenticação")
-    token = gr.Text(label="🔐 Token", type="password")
-    question = gr.Textbox(label="❓ Pergunta", placeholder="Digite sua pergunta aqui...")
-    output = gr.JSON(label="📤 Resposta JSON")
-    gr.Button("Enviar").click(fn=ask_question_api, inputs=[question, token], outputs=output)
-
-if __name__ == "__main__":
-    demo.launch()
+    resposta = answer_question(user_message)
+    return JSONResponse(content={"text": resposta})
